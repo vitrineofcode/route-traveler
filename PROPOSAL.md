@@ -36,12 +36,15 @@ The browser-based game I am making is called Route Traveler. It is a one-player 
 ## Monday:
 
 <u>HTML</u>: Create the basic HTML structure for the game area.
+
 <u>CSS</u>: Set up a basic CSS file to style the game area and any UI elements.
+
 <u>JavaScript</u>: Initialize a JavaScript file and set up the game loop structure.
 
 ## Tuesday:
 
 <u>HTML/CSS</u>: Create the character and enemy elements using HTML and CSS.
+
 <u>JavaScript</u>: Write the JavaScript functions to control the character's actions.
 
 ## Wednesday:
@@ -55,6 +58,7 @@ The browser-based game I am making is called Route Traveler. It is a one-player 
 ## Friday:
 
 <u>HTML/CSS</u>: Design and implement the user interface, including health bars and game messages.
+
 <u>JavaScript</u>: Add event listeners and functions to update the UI based on game events.
 
 ## Saturday:
@@ -65,3 +69,51 @@ Thoroughly test the game for bugs and issues. Debug and fix any problems that ar
 
 Polish the game by refining the design, improving performance, and ensuring a smooth user experience.
 Start planning for future additions to the game, such as new characters.
+
+# Pseudocode
+// Initialize game state
+Initialize game variables (player health, enemy health, game status)
+
+// Load game assets
+Load assets (images, sounds, etc.)
+
+// Set up event listeners
+Set up event listeners for user input (e.g., attack button, retry button)
+
+// Main game loop
+While game is not over:
+    // Update game state
+    Update player and enemy positions and actions
+
+    // Check for battle outcomes
+    If player attacks enemy:
+        Reduce enemy health
+        If enemy health <= 0:
+            Enemy is defeated
+            Check if all enemies are defeated
+                If yes, player wins the game
+                If no, spawn next enemy
+    If enemy attacks player:
+        Reduce player health
+        If player health <= 0:
+            Player loses the game
+
+    // Update game UI
+    Update health bars, game messages, etc.
+
+    // Render game frame
+    Draw game area, characters, and UI elements
+
+// Game over
+If player wins:
+    Display victory message and retry button
+If player loses:
+    Display game over message and retry button
+
+// Event handlers
+Function for attack button:
+    Player attacks enemy
+
+Function for retry button:
+    Reset game state
+    Start game loop again
