@@ -6,7 +6,7 @@ The browser-based game I am making is called Route Traveler. It is a one-player 
 
 ## Initial Landing View
 
-<img src="https://github.com/vitrineofcode/route-traveler/blob/main/images/intitial-start-screen.jpeg?raw=true">
+<img src="images/intitial-start-screen.jpeg">
 
 ## Results View
 
