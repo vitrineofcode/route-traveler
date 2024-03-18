@@ -4,13 +4,33 @@ The browser-based game I am making is called Route Traveler. It is a one-player 
 
 # Wireframes
 
-## Initial Landing View
+## Start Page
 
-<img src="images/intitial-start-screen.jpeg">
+<img src="images/start-page.png">
 
-## Results View
+## Selecting Attack
 
-<img src="images/you-win.jpeg">
+<img src="images/selecting-attack.jpg">
+
+## Player's Turn
+
+<img src="images/player-turn.jpg">
+
+## Enemy's Turn
+
+<img src="images/enemy-turn.jpg">
+
+## Player Loses
+
+<img src="images/player-loses.jpg">
+
+## Player Wins
+
+<img src="images/player-wins.jpg">
+
+## Decreased Health
+
+<img src="images/decreased-health.jpg">
 
 # User Stories
 
@@ -71,6 +91,7 @@ Polish the game by refining the design, improving performance, and ensuring a sm
 Start planning for future additions to the game, such as new characters.
 
 # Pseudocode
+
 // Initialize game state
 Initialize game variables (player health, enemy health, game status)
 
@@ -82,8 +103,8 @@ Set up event listeners for user input (e.g., attack button, retry button)
 
 // Main game loop
 While game is not over:
-    // Update game state
-    Update player and enemy positions and actions
+// Update game state
+Update player and enemy positions and actions
 
     // Check for battle outcomes
     If player attacks enemy:
@@ -106,14 +127,14 @@ While game is not over:
 
 // Game over
 If player wins:
-    Display victory message and retry button
+Display victory message and retry button
 If player loses:
-    Display game over message and retry button
+Display game over message and retry button
 
 // Event handlers
 Function for attack button:
-    Player attacks enemy
+Player attacks enemy
 
 Function for retry button:
-    Reset game state
-    Start game loop again
+Reset game state
+Start game loop again
