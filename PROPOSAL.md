@@ -36,20 +36,20 @@ The browser-based game I am making is called Route Traveler. It is a one-player 
 
 ## MVP Goals
 
-- As a player, I want to engage in battles with enemy creatures so that I can progress through the game.
-- As a player, I want to attack enemies using a simple attack action so that I can defeat them in battle.
-- As a player, I want to see my character's and enemies' health bars so that I can monitor our health status during battles.
-- As a player, I want to win the game by defeating all enemies so that I can complete the game.
+- As a player, I want to engage in battle with the enemy so that I can progress through the game.
+- As a player, I want to attack the enemy using a simple attack action so that I can defeat them in battle.
+- As a player, I want to see my character's and enemy's health bars so that I can monitor our health status during battles.
+- As a player, I want to win the game by defeating the enemy so that I can complete the game.
 - As a player, I want to lose the game if my character's health reaches zero so that there are consequences for failing in battle.
 - As a player, I want to see a start screen with a play button so that I can begin the game when I'm ready.
-- As a player, I want to see a game over screen with a retry button so that I can try again if I lose.
+- As a player, I want to see a game over screen with a restart button so that I can try again if I lose.
 
 ## Stretch Goals
 
 - As a player, I want to choose from multiple characters so that I can have varied gameplay experiences.
-- As a player, I want to encounter a variety of enemies with different attack patterns so that battles remain interesting.
+- As a player, I want to battle multiple enemies
 - As a player, I want to hear sound effects and background music so that the game is more immersive and enjoyable.
-- As a player, I want to progress through multiple levels with increasing difficulty so that the game remains challenging.
+- As a player, I want to battle a boss after defeating regular enemies
 
 # Timeline
 
@@ -73,11 +73,11 @@ The browser-based game I am making is called Route Traveler. It is a one-player 
 
 ## Thursday:
 
-<u>JavaScript</u>: Develop the game progression system for enemy spawning and win/lose conditions.
+<u>JavaScript</u>: Develop the game's win/lose conditions.
 
 ## Friday:
 
-<u>HTML/CSS</u>: Design and implement the user interface, including health bars and game messages.
+<u>HTML/CSS</u>: Design and implement the user interface, including health bars.
 
 <u>JavaScript</u>: Add event listeners and functions to update the UI based on game events.
 
@@ -111,9 +111,6 @@ Update player and enemy positions and actions
         Reduce enemy health
         If enemy health <= 0:
             Enemy is defeated
-            Check if all enemies are defeated
-                If yes, player wins the game
-                If no, spawn next enemy
     If enemy attacks player:
         Reduce player health
         If player health <= 0:

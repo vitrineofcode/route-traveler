@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turn-Based RPG Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="battlefield">
+            <div class="player-area">
+                <div class="player">
+                    <!-- <img class="playerImg" src="images/player.png" alt="Player"> -->
+                </div>
+                <div class="health-bar-container">
+                    <div class="health-bar" id="player-health-bar"></div>
+                </div>
+            </div>
+            <div class="enemy-area">
+                <div class="enemy">
+                    <!-- <img class="enemyImg" src="images/varick.png" alt="Enemy"> -->
+                </div>
+                <div class="health-bar-container">
+                    <div class="health-bar" id="enemy-health-bar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="action-panel">
+            <button id="attack-button">Attack</button>
+            <!-- <button>Defend</button>
+            <button>Special</button> -->
+        </div>
+        <div class="message-area" id="game-message"></div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
