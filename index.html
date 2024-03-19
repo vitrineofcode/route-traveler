@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🏰 Route Traveler - Gameplay</title>
     <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Blaka+Ink&display=swap" rel="stylesheet">
+  </head>
+  <body>
     <div class="container">
-        <div class="box" id="ground"></div>
-        <div class="box health-bar" id="playerHealth">
-            <div class="health-bar-text">Aldric</div>
-            <div class="health-bar-container">
-                <div class="health-bar-fill" style="width: 100%;"></div>
-            </div>
+      <div class="box" id="ground">
+        <button id="playerAttackButton" class="attack">Knight's Valor</button>
+        <button id="playerHealButton" class="attack">Heal</button>
+        <img id="groundImg" src="images/8bitground.jpg" alt="">
+      </div>
+      <div class="box health-bar" id="playerHealth">
+        <div class="health-bar-text">Aldric</div>
+        <div class="health-bar-container">
+          <div class="health-bar-fill"></div>
         </div>
-        <div class="box health-bar" id="enemyHealth">
-            <div class="health-bar-text">Varick</div>
-            <div class="health-bar-container">
-                <div class="health-bar-fill" style="width: 100%;"></div>
-            </div>
+      </div>
+      <div class="box health-bar" id="enemyHealth">
+        <div class="health-bar-text">Varick</div>
+        <div class="health-bar-container">
+          <div class="health-bar-fill"></div>
         </div>
-        <div class="box" id="playerAvatar">
-            <img id="aldricImg" src="images/aldric.png" alt="">
-        </div>
-        <div class="box" id="enemyAvatar">
-            <img id="varickImg" src="images/varick.png" alt="">
-        </div>
-        <div class="box" id="status"></div>
+      </div>
+      <div class="box" id="playerAvatar">
+        <img id="aldricImg" src="images/aldric.png">
+      </div>
+      <div class="box" id="enemyAvatar">
+        <img id="varickImg" src="images/varick.png">
+        <img id="acolyteImg" src="images/acolyte.png">
+      </div>
+      <div class="box" id="status">
+        <p></p>
+        <button id="restartButton" class="restart" style="display: none;">Restart Battle</button>
+      </div>
     </div>
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
