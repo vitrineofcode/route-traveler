@@ -3,14 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🏰 Route Traveler - Start Game</title>
+    <title>🏰 Route Traveler - Gameplay</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="home-container">
-        <h1>Route Traveler</h1>
-        <button id="start-game-button">Start Game</button>
+    <div class="container">
+        <div class="box" id="ground"></div>
+        <div class="box health-bar" id="playerHealth">
+            <div class="health-bar-text">Aldric</div>
+            <div class="health-bar-container">
+                <div class="health-bar-fill" style="width: 100%;"></div>
+            </div>
+        </div>
+        <div class="box health-bar" id="enemyHealth">
+            <div class="health-bar-text">Varick</div>
+            <div class="health-bar-container">
+                <div class="health-bar-fill" style="width: 100%;"></div>
+            </div>
+        </div>
+        <div class="box" id="playerAvatar">
+            <img id="aldricImg" src="images/aldric.png" alt="">
+        </div>
+        <div class="box" id="enemyAvatar">
+            <img id="varickImg" src="images/varick.png" alt="">
+        </div>
+        <div class="box" id="status"></div>
     </div>
-    <script src="js/home.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

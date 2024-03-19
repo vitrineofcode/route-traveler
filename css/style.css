@@ -1,79 +1,77 @@
-
-.home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.container {  
   height: 100vh;
-  text-align: center;
-}
-
-.home-container h1 {
-  margin-bottom: 20px;
-}
-
-.home-container button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-/* Code above this line is for the home page */
-
-.playerImg, .enemyImg {
-  width: 80px;
-  height: 80px;
-}
-
-.game-container {
   display: grid;
-  grid-template-rows: 1fr auto auto;
-  height: 100vh;
-}
-
-.battlefield {
-  display: flex;
-  justify-content: space-around;
+  grid-template-columns: 250px 250px;
+  grid-template-rows: 50px 70px 100px 100px;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  justify-content: center; 
+  align-content: center; 
+  justify-items: center;
   align-items: center;
-  background-color: #f0f0f0;
+  grid-template-areas:
+    "playerHealth enemyHealth"
+    "status status"
+    "playerAvatar enemyAvatar"
+    "ground ground";
 }
 
-.player-area, .enemy-area {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.health-bar-container {
-  width: 60%;
-  background-color: #ddd;
-  border-radius: 5px;
-  margin-top: 10px;
-  height: 15px;
+#ground { 
+  grid-area: ground; 
+  border: 3px solid rgb(133, 32, 32);
+  border-radius: 12%;
+  background-color: rgb(133, 32, 32);
+  width: 31rem;
+  height: 6rem;
 }
 
 .health-bar {
+  grid-area: playerHealth;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.health-bar-text {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.health-bar-container {
+  background-color: #eee;
+  width: 100px;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.health-bar-fill {
   background-color: #4CAF50;
   height: 100%;
-  border-radius: 5px;
-  transition: width 0.5s ease-in-out;
+  border-radius: 6px;
 }
 
-.action-panel {
+#enemyHealth { 
+  grid-area: enemyHealth; 
+}
+
+#enemyAvatar {
+  grid-area: enemyAvatar;
+  width: 170px;
+  height: 180px;
   display: flex;
-  justify-content: center;
-  background-color: #ddd;
-  padding: 10px 0;
+  margin-bottom: 55px;
 }
 
-.action-panel button {
-  margin: 0 10px;
+#playerAvatar { 
+  grid-area: playerAvatar; 
+  display: flex;
+  width: 60px;
+  height: 50px;
+  margin-top: 25%;
 }
 
-.message-area {
-  text-align: center;
-  padding: 10px;
-  font-size: 16px;
-  color: #333;
+#status { 
+  grid-area: status; 
 }
