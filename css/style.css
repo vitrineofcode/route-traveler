@@ -1,9 +1,13 @@
+body {
+  background-color: #FFF;
+}
+
 .container {  
   background-color: white;
   height: 100vh;
   display: grid;
-  grid-template-columns: 250px 250px;
-  grid-template-rows: 50px 70px 100px 100px;
+  grid-template-columns: 400px 400px;
+  grid-template-rows: 100px 120px 150px 150px;
   grid-auto-columns: 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
@@ -25,19 +29,21 @@
 .attack {
   width: 80px;
   height: 17px;
-  border: 1.5px solid black;
-  background-color: whitesmoke;
+  border: 1.5px solid white;
+  background: rgba(0, 0, 0, 0.7);
   font-size: 7px;
   position: absolute;
   left: 100px;
+  color: white;
+  text-align: left
 }
 
 #ground { 
   overflow: hidden;
   grid-area: ground; 
   border: 3px solid black;
-  width: 31rem;
-  height: 6rem;
+  width: 797px;
+  height: 145px;
   position: relative;
 }
 
@@ -57,22 +63,23 @@
 .health-bar-text {
   font-weight: bold;
   font-size: 14px;
-  color: black;
+  color: white;
+  text-shadow: 2px 2px 4px #000;
 }
 
 .health-bar-container {
   background-color: #eee;
   width: 100px;
   height: 12px;
-  border-radius: 6px;
   overflow: hidden;
+  border: 1px solid black;
 }
 
 .health-bar-fill {
-  background-color: #4CAF50;
+  background-color: #7ddd80;
   height: 100%;
-  border-radius: 6px;
-  width: 100%
+  width: 100%;
+  /* border: 1px solid black; */
 }
 
 #enemyHealth { 

@@ -4,13 +4,6 @@ let isPlayerTurn = true;
 const statusElement = document.querySelector("p");
 const music = document.getElementById("backgroundMusic");
 
-function toggleMusic() {
-  if (music.paused) {
-    music.play();
-  } else {
-    music.pause();
-  }
-}
 
 function hideButtons() {
   document.getElementById("playerAttackButton").style.display = "none";
@@ -27,7 +20,6 @@ function playerAttack() {
   if (isPlayerTurn && aldricHealth > 0) {
     isPlayerTurn = false;
     const damage = getRandomNumber(5, 15);
-    console.log(`Aldric attacks Varick for ${damage} damage!`);
     varickHealth = Math.max(0, varickHealth - damage); // Ensure health doesn't go below 0
     updateHealthBars(); // Update health bars before checking for game over
     checkGameOver();
@@ -42,7 +34,6 @@ function playerAttack() {
 function varickAttack() {
   if (varickHealth > 0) {
     const damage = getRandomNumber(5, 15);
-    console.log(`Varick attacks Aldric for ${damage} damage!`);
     aldricHealth = Math.max(0, aldricHealth - damage); // Ensure health doesn't go below 0
     updateHealthBars(); // Update health bars before checking for game over
     checkGameOver();
@@ -54,7 +45,6 @@ function playerHeal() {
   if (isPlayerTurn && aldricHealth > 0) {
     isPlayerTurn = false;
     const healAmount = getRandomNumber(5, 10);
-    console.log(`Aldric heals for ${healAmount}!`);
     aldricHealth = Math.min(aldricHealth + healAmount, 100);
     updateHealthBars();
     setTimeout(() => {
@@ -79,12 +69,10 @@ function updateHealthBars() {
 // Function to check if the game is over
 function checkGameOver() {
   if (varickHealth <= 0) {
-    console.log("Aldric wins!");
     statusElement.textContent = "You Win!"; // Display "You Win" message
     document.getElementById("varickImg").style.opacity = "0"; // Reduce Varick's image opacity to zero
     document.getElementById("restartButton").style.display = "block";
   } else if (aldricHealth <= 0) {
-    console.log("Varick wins!");
     statusElement.textContent = "You Lose!"; // Display "You Lose" message
     document.getElementById("aldricImg").style.opacity = "0"; // Reduce Aldric's image opacity to zero
     document.getElementById("restartButton").style.display = "block";
