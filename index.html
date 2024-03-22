@@ -1,44 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🏰 Route Traveler - Gameplay</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Blaka+Ink&display=swap" rel="stylesheet">
+    <title>Route Traveler</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="container">
-      <div class="box" id="ground">
-        <button id="playerAttackButton" class="attack">Knight's Valor</button>
-        <button id="playerHealButton" class="attack">Heal</button>
-        <img id="groundImg" src="images/8bitground.jpg" alt="">
-      </div>
-      <div class="box health-bar" id="playerHealth">
-        <div class="health-bar-text">Aldric</div>
-        <div class="health-bar-container">
-          <div class="health-bar-fill"></div>
+    <div class="game-container">
+      <!-- <div class="difficulty-select">
+        <label for="difficulty">Difficulty:</label>
+        <select id="difficulty">
+          <option value="normal">Normal</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div> -->
+      <div class="player-section">
+        <div class="character-portrait">
+          <img src="images/player.png" alt="Player" />
+        </div>
+        <div class="player-stats">
+          <h2>Aldric</h2>
+          <p>Health: <span id="player-health">100</span></p>
+          <p>Mana: <span id="player-mana">50</span></p>
+          <div class="experience-bar">
+            <div class="experience-progress" style="width: 40%"></div>
+          </div>
+          <p>Items: Potion x<span id="player-potions">2</span></p>
+          <p>Status: <span id="player-status">Normal</span></p>
         </div>
       </div>
-      <div class="box health-bar" id="enemyHealth">
-        <div class="health-bar-text">Varick</div>
-        <div class="health-bar-container">
-          <div class="health-bar-fill"></div>
+
+      <div class="enemy-section">
+        <div class="character-portrait">
+          <img src="images/enemy.png" alt="Enemy" />
+        </div>
+        <div class="enemy-stats">
+          <h2>Varick</h2>
+          <p>Health: <span id="enemy-health">80</span></p>
         </div>
       </div>
-      <div class="box" id="playerAvatar">
-        <img id="aldricImg" src="images/aldric.png">
+
+      <div class="actions">
+        <button id="attack-button">Attack</button>
+        <button id="heal-button">Heal</button>
+        <button id="magic-button">Magic</button>
+        <button id="item-button">Use Item</button>
+        <button id="special-skill-button">Special Skill (Cost: 20 Mana)</button>
       </div>
-      <div class="box" id="enemyAvatar">
-        <img id="varickImg" src="images/varick.png">
-      </div>
-      <div class="box" id="status">
-        <p></p>
-        <button id="restartButton" class="restart" style="display: none;">Restart Battle</button>
+
+      <div class="message-log">
+        <h3>Messages</h3>
+        <div id="messages">
+        </div>
       </div>
     </div>
-    <script src="js/script.js"></script>
+    <audio id="game-music" src="audio/battle-music.mp3" autoplay loop></audio>
+    <script src="js/game.js"></script>
   </body>
 </html>

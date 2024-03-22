@@ -1,0 +1,29 @@
+body {
+  background-color: black;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+}
+
+img {
+  margin-top: 7%;
+  width: 45%;
+  height: 45%;
+}
+
+p {
+  text-decoration: underline;
+  color: red;
+  position: absolute;
+  bottom: 40%;
+  font-size: 360%;
+  text-shadow: 0 0 10px #ff0000, /* Red glow */ 0 0 20px #ff0000,
+    /* Increasing the blur radius */ 0 0 30px #ff0000,
+    /* More intense red glow */ 0 0 40px #ff0000,
+    /* Even more blur for a larger glow */ 0 0 50px #ff0000; /* Maximum glow */
+}

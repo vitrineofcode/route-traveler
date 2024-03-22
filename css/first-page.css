@@ -8,6 +8,7 @@ body, html {
     justify-content: center;
     align-items: center;
     text-align: center;
+    transition: opacity 2s ease-in-out;
   }
   .content {
     max-width: 600px; 
@@ -15,4 +16,8 @@ body, html {
   .message {
     font-size: 24px; 
     margin-bottom: 20px;
+  }
+
+  .hidden {
+    opacity: 0;
   }
