@@ -1,174 +1,27 @@
-body {
-  font-family: 'Press Start 2P', cursive;
-  background-color: #270243;
-  background-image: url('../images/bg-cropped.jpg');
-  background-size: cover;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 2s ease-in-out;
+  }
+  .content {
+    max-width: 600px; 
+  }
+  .message {
+    font-size: 24px; 
+    margin-bottom: 20px;
+  }
 
-.game-container {
-  display: flex;
-  background-color: rgba(0, 0, 0, 0.8);
-  border: 2px solid #766f03;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+  .hidden {
+    opacity: 0;
+  }
 
-.left-container {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.player-section, .enemy-section {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.character-portrait img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.character-portrait.flash-effect img {
-  animation: flash 0.5s;
-}
-
-.character-portrait.heal-effect img {
-  animation: heal 1s;
-}
-
-.actions button {
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 12px;
-  margin-right: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.actions button:hover {
-  background-color: #45a049;
-}
-
-.actions button:disabled {
-  background-color: #9e9e9e;
-  cursor: not-allowed;
-}
-
-.message-log {
-  width: 320px; 
-  margin-left: 20px;
-  max-height: 400px;
-  overflow-y: auto;
-  border-left: 2px solid #4caf50;
-  padding-left: 20px;
-}
-
-
-#messages p {
-  font-size: 0.8em;
-  margin: 5px 0;
-  font-style: arial;
-}
-
-.game-over-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: white;
-  font-size: 2em;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 2s, background-color 2s;
-}
-
-.game-over-overlay.active {
-  opacity: 1;
-  background-color: rgba(0, 0, 0, 0.8);
-  pointer-events: all;
-}
-
-.game-over-overlay button {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
-  margin-top: 20px;
-  cursor: pointer;
-}
-
-#game-over-image {
-  width: 30%;
-  height: auto;
-}
-
-#restart-button {
-  background-color: #f44336;
-  color: #fff;
-  font-size: 1em;
-  padding: 10px 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-#restart-button:hover {
-  background-color: #e53935;
-  transform: scale(1.05);
-}
-
-#restart-button:active {
-  transform: scale(0.95);
-}
-
-.difficulty-select {
-  text-align: center;
-  margin-bottom: 20px; 
-}
-
-.difficulty-select button {
-  background-color: rgb(113, 82, 41);
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 12px;
-  margin-right: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.difficulty-select button:hover {
-  background-color: #1e88e5;
-}
-
-@keyframes flash {
-  0% { background-color: transparent; }
-  50% { background-color: red; }
-  100% { background-color: transparent; }
-}
-
-@keyframes heal {
-  0%, 100% { box-shadow: none; }
-  50% { box-shadow: 0 0 10px 5px green; }
-}
+  a {
+    margin: 0 auto;
+  }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>🏰 Route Traveler - Battle</title>
+    <link rel="stylesheet" href="css/battle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="game-container">   
+      <div class="left-container">
+        <div class="player-section">
+          <div class="character-portrait">
+            <img src="images/player.png" alt="Player" />
+          </div>
+          <div class="player-stats">
+            <h2>Aldric</h2>
+            <p>Health: <span id="player-health">100</span></p>
+            <p>Mana: <span id="player-mana">50</span></p>
+            <p>Items: Potion x<span id="player-potions">2</span></p>
+            <p>Status: <span id="player-status">Normal</span></p>
+          </div>
+        </div>
+        <div class="enemy-section">
+          <div class="character-portrait">
+            <img src="images/enemy.png" alt="Enemy" />
+          </div>
+          <div class="enemy-stats">
+            <h2>Varick</h2>
+            <p>Health: <span id="enemy-health">80</span></p>
+          </div>
+        </div>
+        <div class="actions">
+          <button id="attack-button">Attack</button>
+          <button id="heal-button">Heal</button>
+          <button id="magic-button">Magic</button>
+          <button id="item-button">Use Item</button>
+          <button id="special-skill-button">Special Skill (Cost: 20 Mana)</button>
+        </div>
+      </div>
+      <div class="message-log">
+        <div class="difficulty-select">
+          <button id="easy">Easy</button>
+          <button id="normal">Normal</button>
+          <button id="hard">Hard</button>
+        </div>
+        <h3>Messages</h3>
+        <div id="messages"></div>
+      </div>
+    </div>
+    <div class="game-over-overlay" id="game-over-overlay">
+      <img id="game-over-image" src="" alt="Game Over" /> 
+      <div id="game-over-message">Game Over</div>
+      <button id="restart-button">Restart Battle</button>
+    </div>
+    <audio id="game-music" src="audio/battle-music.mp3" autoplay loop></audio>
+    <script src="js/battle.js"></script>
+  </body>
+</html>
