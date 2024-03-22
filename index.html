@@ -12,13 +12,7 @@
   </head>
   <body>
     <div class="game-container">
-      <!-- <div class="difficulty-select">
-        <label for="difficulty">Difficulty:</label>
-        <select id="difficulty">
-          <option value="normal">Normal</option>
-          <option value="hard">Hard</option>
-        </select>
-      </div> -->
+
       <div class="player-section">
         <div class="character-portrait">
           <img src="images/player.png" alt="Player" />
@@ -55,10 +49,16 @@
 
       <div class="message-log">
         <h3>Messages</h3>
-        <div id="messages">
-        </div>
+        <div id="messages"></div>
       </div>
     </div>
+
+    <div class="game-over-overlay" id="game-over-overlay">
+      <img id="game-over-image" src="" alt="Game Over" /> 
+      <div id="game-over-message">Game Over</div>
+      <button id="restart-button">Restart Battle</button>
+    </div>
+
     <audio id="game-music" src="audio/battle-music.mp3" autoplay loop></audio>
     <script src="js/game.js"></script>
   </body>

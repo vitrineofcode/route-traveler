@@ -1,9 +1,9 @@
-let playerHealth = 100;
+let playerHealth = 10;
 let playerMana = 50;
 let enemyHealth = 80;
 let playerPotions = 2;
 let isPlayerTurn = true;
-let difficulty = 'easy';
+let difficulty = 'normal';
 
 function updateStats() {
     document.getElementById('player-health').textContent = Math.max(playerHealth, 0);
@@ -52,6 +52,7 @@ function playerHeal() {
     if (isPlayerTurn && playerMana >= 10) {
         const healAmount = 20;
         playerHealth += healAmount;
+        playerHealth = Math.min(playerHealth, 100); // Ensure health does not exceed 100
         playerMana -= 10;
         addMessage(`Player heals for ${healAmount} health.`);
         updateStats();
@@ -131,14 +132,31 @@ function enemyTurn() {
 }
 
 function checkGameOver() {
-    if (enemyHealth <= 0) {
-        addMessage('Enemy is defeated! You win!');
-        disableButtons();
-    } else if (playerHealth <= 0) {
-        addMessage('You are defeated! Game over!');
+    if (enemyHealth <= 0 || playerHealth <= 0) {
+        const gameOverOverlay = document.getElementById('game-over-overlay');
+        const gameOverImage = document.getElementById('game-over-image');
+        const message = document.getElementById('game-over-message');
+
+        if (playerHealth <= 0) {
+            message.textContent = 'Game Over';
+            gameOverImage.src = 'images/game-over.png';
+        } else {
+            message.textContent = 'You Win!';
+            gameOverImage.src = 'images/you-win.png';
+        }
+
+        gameOverOverlay.classList.add('active');
         disableButtons();
     }
 }
+
+
+document.getElementById('restart-button').addEventListener('click', () => {
+    const gameOverOverlay = document.getElementById('game-over-overlay');
+    gameOverOverlay.classList.remove('active');
+    startGame();
+});
+
 
 function disableButtons() {
     document.getElementById('attack-button').disabled = true;
