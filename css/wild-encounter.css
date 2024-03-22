@@ -1,0 +1,17 @@
+#game-board {
+  width: 400px;
+  height: 400px;
+  padding: 0;
+  /* background-color: lightgreen; */
+  background-image: url('../images/grass-background.jpg');
+  background-size: cover;
+  border: 3px solid black;
+  position: relative;
+}
+
+.character {
+  width: 32px;
+  height: 32px;
+  background-color: blue;
+  position: absolute;
+}

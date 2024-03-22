@@ -1,7 +1,8 @@
 body {
-  font-family: 'Courier New', monospace;
-  background-color: #2c2f33;
-  /* background-image: url(images/bg-cropped.jpg) */
+  font-family: 'Press Start 2P', cursive;
+  background-color: #270243;
+  background-image: url('../images/bg-cropped.jpg');
+  background-size: cover;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -12,12 +13,18 @@ body {
 }
 
 .game-container {
-  background-color: #3c3f43;
-  border: 2px solid #4caf50;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid #766f03;
   border-radius: 8px;
   padding: 20px;
-  width: 350px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .player-section, .enemy-section {
@@ -47,8 +54,7 @@ body {
   border: none;
   border-radius: 4px;
   padding: 8px 12px;
-  margin-right: 12px; /* Increase the right margin */
-  margin-bottom: 10px; /* Add some bottom margin for vertical spacing */
+  margin-right: 10px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -63,16 +69,19 @@ body {
 }
 
 .message-log {
-  margin-top: 20px;
-  border-top: 2px solid #4caf50;
-  padding-top: 10px;
-  max-height: 150px; /* Set a maximum height for the message log */
-  overflow-y: auto; /* Enable vertical scrolling */
+  width: 320px; /* Adjust the width as needed */
+  margin-left: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+  border-left: 2px solid #4caf50;
+  padding-left: 20px;
 }
 
+
 #messages p {
-  font-size: 0.9em;
+  font-size: 0.8em;
   margin: 5px 0;
+  font-style: arial;
 }
 
 .game-over-overlay {
@@ -110,33 +119,47 @@ body {
 }
 
 #game-over-image {
-  width: 50%; 
-  height: auto; 
+  width: 30%;
+  height: auto;
 }
 
 #restart-button {
-  background-color: #ff5722; /* Orange color */
-  color: #fff; /* White text */
-  font-size: 0.5em; /* Larger font size */
-  padding: 10px 20px; /* Increased padding */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
-  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+  background-color: #f44336;
+  color: #fff;
+  font-size: 1em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 #restart-button:hover {
-  background-color: #e64a19; /* Darker orange on hover */
-  transform: scale(1.05); /* Slightly larger on hover */
+  background-color: #e53935;
+  transform: scale(1.05);
 }
 
 #restart-button:active {
-  transform: scale(0.95); /* Slightly smaller when clicked */
+  transform: scale(0.95);
 }
 
-@media screen and (min-width: 1024px) {
-  #game-over-image {
-      width: 30%; /* Smaller width on larger screens */
-  }
+.difficulty-select {
+  text-align: center;
+  margin-bottom: 20px; 
+}
+
+.difficulty-select button {
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.difficulty-select button:hover {
+  background-color: #1e88e5;
 }
 
 @keyframes flash {

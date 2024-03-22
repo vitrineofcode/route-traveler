@@ -1,4 +1,4 @@
-let playerHealth = 10;
+let playerHealth = 100;
 let playerMana = 50;
 let enemyHealth = 80;
 let playerPotions = 2;
@@ -116,8 +116,24 @@ function playerUsePotion() {
 function enemyTurn() {
     if (enemyHealth > 0) {
         const action = Math.random() > 0.5 ? 'attack' : 'heal';
+        let damage; // Declare a variable to hold the damage value
+
+        // Set the damage range based on the difficulty level
+        switch (difficulty) {
+            case 'easy':
+                damage = Math.floor(Math.random() * 5) + 3; // Range: 3-7
+                break;
+            case 'normal':
+                damage = Math.floor(Math.random() * 6) + 5; // Range: 5-10
+                break;
+            case 'hard':
+                damage = Math.floor(Math.random() * 7) + 8; // Range: 8-14
+                break;
+            default:
+                damage = 8; // Default value if difficulty is not set
+        }
+
         if (action === 'attack') {
-            const damage = 8;
             playerHealth -= damage;
             addMessage(`Enemy attacks Player for ${damage} damage.`);
         } else {
@@ -131,6 +147,7 @@ function enemyTurn() {
         isPlayerTurn = true;
     }
 }
+
 
 function checkGameOver() {
     if (enemyHealth <= 0 || playerHealth <= 0) {
@@ -148,11 +165,6 @@ function checkGameOver() {
 
         gameOverOverlay.classList.add('active');
         disableButtons();
-
-        if (enemyHealth <= 0 || playerHealth <= 0) {
-            // Show difficulty buttons when the game is over
-            document.querySelector('.difficulty-select').style.display = 'block';
-        }
     }
 }
 
@@ -197,13 +209,13 @@ function startGame() {
     // Set enemy health based on difficulty
     switch (difficulty) {
         case 'easy':
-            enemyHealth = 60;
+            enemyHealth = 100;
             break;
         case 'normal':
-            enemyHealth = 80;
+            enemyHealth = 150;
             break;
         case 'hard':
-            enemyHealth = 120;
+            enemyHealth = 200;
             break;
     }
 
