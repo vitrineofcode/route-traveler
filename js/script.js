@@ -44,15 +44,14 @@ function playerAttack() {
         if (enemyHealth > 0) {
             setTimeout(enemyTurn, 1000);
         }
-        flashEnemy(); // Trigger visual effect
+        flashEnemy(); 
     }
 }
 
 function playerHeal() {
     if (isPlayerTurn && playerMana >= 10) {
         const healAmount = 20;
-        playerHealth += healAmount;
-        playerHealth = Math.min(playerHealth, 100); // Ensure health does not exceed 100
+        playerHealth = Math.min(playerHealth + healAmount, 100); // Cap player health at 100
         playerMana -= 10;
         addMessage(`Player heals for ${healAmount} health.`);
         updateStats();
@@ -63,6 +62,7 @@ function playerHeal() {
         addMessage(`Not enough mana!`);
     }
 }
+
 
 function playerMagic() {
     if (isPlayerTurn && playerMana >= 15) {
@@ -101,7 +101,7 @@ function playerSpecialSkill() {
 function playerUsePotion() {
     if (isPlayerTurn && playerPotions > 0) {
         const healAmount = 30;
-        playerHealth += healAmount;
+        playerHealth = Math.min(playerHealth + healAmount, 100); // Cap player health at 100
         playerPotions -= 1;
         addMessage(`Player uses a potion to heal ${healAmount} health.`);
         updateStats();
@@ -111,6 +111,7 @@ function playerUsePotion() {
         addMessage(`No potions left!`);
     }
 }
+
 
 function enemyTurn() {
     if (enemyHealth > 0) {
@@ -147,6 +148,11 @@ function checkGameOver() {
 
         gameOverOverlay.classList.add('active');
         disableButtons();
+
+        if (enemyHealth <= 0 || playerHealth <= 0) {
+            // Show difficulty buttons when the game is over
+            document.querySelector('.difficulty-select').style.display = 'block';
+        }
     }
 }
 
@@ -185,14 +191,46 @@ function healPlayer() {
 function startGame() {
     playerHealth = 100;
     playerMana = 50;
-    enemyHealth = difficulty === 'hard' ? 120 : 80;
     playerPotions = 2;
     isPlayerTurn = true;
+
+    // Set enemy health based on difficulty
+    switch (difficulty) {
+        case 'easy':
+            enemyHealth = 60;
+            break;
+        case 'normal':
+            enemyHealth = 80;
+            break;
+        case 'hard':
+            enemyHealth = 120;
+            break;
+    }
+
     clearMessages();
     updateStats();
     enableButtons();
     addMessage(`The battle begins on ${difficulty} difficulty!`);
 }
+
+
+document.getElementById('easy').addEventListener('click', function() {
+    setDifficulty('easy');
+});
+
+document.getElementById('normal').addEventListener('click', function() {
+    setDifficulty('normal');
+});
+
+document.getElementById('hard').addEventListener('click', function() {
+    setDifficulty('hard');
+});
+
+function setDifficulty(diff) {
+    difficulty = diff;
+    startGame(); // Restart the game with the new difficulty
+}
+
 
 document.getElementById('attack-button').addEventListener('click', playerAttack);
 document.getElementById('heal-button').addEventListener('click', playerHeal);
