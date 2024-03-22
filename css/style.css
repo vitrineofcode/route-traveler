@@ -69,9 +69,9 @@ body {
 }
 
 .message-log {
-  width: 320px; /* Adjust the width as needed */
+  width: 320px; 
   margin-left: 20px;
-  max-height: 300px;
+  max-height: 400px;
   overflow-y: auto;
   border-left: 2px solid #4caf50;
   padding-left: 20px;
@@ -148,7 +148,7 @@ body {
 }
 
 .difficulty-select button {
-  background-color: #2196f3;
+  background-color: rgb(113, 82, 41);
   color: #fff;
   border: none;
   border-radius: 4px;
