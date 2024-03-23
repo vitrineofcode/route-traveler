@@ -11,39 +11,39 @@
     />
   </head>
   <body>
-    <div class="game-container">   
-      <div class="left-container">
-        <div class="player-section">
-          <div class="character-portrait">
-            <img src="images/player.png" alt="Player" />
+    <div class="gameContainer">   
+      <div class="leftContainer">
+        <div class="playerSection">
+          <div class="characterPortrait">
+            <img src="images/player.png" alt="player" />
           </div>
-          <div class="player-stats">
+          <div class="playerStats">
             <h2>Aldric</h2>
-            <p>Health: <span id="player-health">100</span></p>
-            <p>Mana: <span id="player-mana">50</span></p>
-            <p>Items: Potion x<span id="player-potions">2</span></p>
-            <p>Status: <span id="player-status">Normal</span></p>
+            <p>Health: <span id="playerHealth">100</span></p>
+            <p>Mana: <span id="playerMana">50</span></p>
+            <p>Items: Potion x<span id="playerPotions">2</span></p>
+            <p>Status: <span id="playerStatus">Normal</span></p>
           </div>
         </div>
-        <div class="enemy-section">
-          <div class="character-portrait">
-            <img src="images/enemy.png" alt="Enemy" />
+        <div class="enemySection">
+          <div class="characterPortrait">
+            <img src="images/enemy.png" alt="enemy" />
           </div>
-          <div class="enemy-stats">
+          <div class="enemyStats">
             <h2>Varick</h2>
-            <p>Health: <span id="enemy-health">80</span></p>
+            <p>Health: <span id="enemyHealth">80</span></p>
           </div>
         </div>
         <div class="actions">
-          <button id="attack-button">Attack</button>
-          <button id="heal-button">Heal</button>
-          <button id="magic-button">Magic</button>
-          <button id="item-button">Use Item</button>
-          <button id="special-skill-button">Special Skill (Cost: 20 Mana)</button>
+          <button id="attackButton">Attack</button>
+          <button id="healButton">Heal</button>
+          <button id="magicButton">Magic</button>
+          <button id="itemButton">Use Item</button>
+          <button id="specialSkillButton">Special Skill</button>
         </div>
       </div>
-      <div class="message-log">
-        <div class="difficulty-select">
+      <div class="messageLog">
+        <div class="difficultySelect">
           <button id="easy">Easy</button>
           <button id="normal">Normal</button>
           <button id="hard">Hard</button>
@@ -52,12 +52,14 @@
         <div id="messages"></div>
       </div>
     </div>
-    <div class="game-over-overlay" id="game-over-overlay">
-      <img id="game-over-image" src="" alt="Game Over" /> 
-      <div id="game-over-message">Game Over</div>
-      <button id="restart-button">Restart Battle</button>
+    <div class="gameOverOverlay" id="gameOverOverlay">
+      <!--  -->
+      <img id="gameOverImage" src="" alt="Game Over" /> 
+      <!--  -->
+      <div id="gameOverMessage">Game Over</div>
+      <button id="restartButton">Restart Battle</button>
     </div>
-    <audio id="game-music" src="audio/battle-music.mp3" autoplay loop></audio>
+    <audio id="gameMusic" src="audio/battle-music.mp3" autoplay loop></audio>
     <script src="js/battle.js"></script>
   </body>
 </html> 

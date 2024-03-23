@@ -6,10 +6,10 @@ let isPlayerTurn = true;
 let difficulty = 'normal';
 
 function updateStats() {
-    document.getElementById('player-health').textContent = Math.max(playerHealth, 0);
-    document.getElementById('player-mana').textContent = Math.max(playerMana, 0);
-    document.getElementById('enemy-health').textContent = Math.max(enemyHealth, 0);
-    document.getElementById('player-potions').textContent = playerPotions;
+    document.getElementById('playerHealth').textContent = Math.max(playerHealth, 0);
+    document.getElementById('playerMana').textContent = Math.max(playerMana, 0);
+    document.getElementById('enemyHealth').textContent = Math.max(enemyHealth, 0);
+    document.getElementById('playerPotions').textContent = playerPotions;
 }
 
 function addMessage(message) {
@@ -26,11 +26,11 @@ function clearMessages() {
 }
 
 function enableButtons() {
-    document.getElementById('attack-button').disabled = false;
-    document.getElementById('heal-button').disabled = false;
-    document.getElementById('magic-button').disabled = false;
-    document.getElementById('item-button').disabled = false;
-    document.getElementById('special-skill-button').disabled = false;
+    document.getElementById('attackButton').disabled = false;
+    document.getElementById('healButton').disabled = false;
+    document.getElementById('magicButton').disabled = false;
+    document.getElementById('itemButton').disabled = false;
+    document.getElementById('specialSkillButton').disabled = false;
 }
 
 function playerAttack() {
@@ -51,7 +51,7 @@ function playerAttack() {
 function playerHeal() {
     if (isPlayerTurn && playerMana >= 10) {
         const healAmount = 20;
-        playerHealth = Math.min(playerHealth + healAmount, 100); // Cap player health at 100
+        playerHealth = Math.min(playerHealth + healAmount, 100); 
         playerMana -= 10;
         addMessage(`Player heals for ${healAmount} health.`);
         updateStats();
@@ -116,9 +116,8 @@ function playerUsePotion() {
 function enemyTurn() {
     if (enemyHealth > 0) {
         const action = Math.random() > 0.5 ? 'attack' : 'heal';
-        let damage; // Declare a variable to hold the damage value
+        let damage; 
 
-        // Set the damage range based on the difficulty level
         switch (difficulty) {
             case 'easy':
                 damage = Math.floor(Math.random() * 5) + 3; // Range: 3-7
@@ -130,7 +129,7 @@ function enemyTurn() {
                 damage = Math.floor(Math.random() * 7) + 8; // Range: 8-14
                 break;
             default:
-                damage = 8; // Default value if difficulty is not set
+                damage = 8; 
         }
 
         if (action === 'attack') {
@@ -151,15 +150,15 @@ function enemyTurn() {
 
 function checkGameOver() {
     if (enemyHealth <= 0 || playerHealth <= 0) {
-        const gameOverOverlay = document.getElementById('game-over-overlay');
-        const gameOverImage = document.getElementById('game-over-image');
-        const message = document.getElementById('game-over-message');
+        const gameOverOverlay = document.getElementById('gameOverOverlay');
+        const gameOverImage = document.getElementById('gameOverImage');
+        const message = document.getElementById('gameOverMessage');
 
         if (playerHealth <= 0) {
             message.textContent = 'Game Over';
             gameOverImage.src = 'images/game-over.png';
         } else {
-            message.textContent = 'You Win!';
+            message.textContent = 'You Win';
             gameOverImage.src = 'images/you-win.png';
         }
 
@@ -169,34 +168,34 @@ function checkGameOver() {
 }
 
 
-document.getElementById('restart-button').addEventListener('click', () => {
-    const gameOverOverlay = document.getElementById('game-over-overlay');
+document.getElementById('restartButton').addEventListener('click', () => {
+    const gameOverOverlay = document.getElementById('gameOverOverlay');
     gameOverOverlay.classList.remove('active');
     startGame();
 });
 
 
 function disableButtons() {
-    document.getElementById('attack-button').disabled = true;
-    document.getElementById('heal-button').disabled = true;
-    document.getElementById('magic-button').disabled = true;
-    document.getElementById('item-button').disabled = true;
-    document.getElementById('special-skill-button').disabled = true;
+    document.getElementById('attackButton').disabled = true;
+    document.getElementById('healButton').disabled = true;
+    document.getElementById('magicButton').disabled = true;
+    document.getElementById('itemButton').disabled = true;
+    document.getElementById('specialSkillButton').disabled = true;
 }
 
 function flashEnemy() {
-    const enemyPortrait = document.querySelector('.enemy-section .character-portrait');
-    enemyPortrait.classList.add('flash-effect');
+    const enemyPortrait = document.querySelector('.enemySection .characterPortrait');
+    enemyPortrait.classList.add('flashEffect');
     setTimeout(() => {
-        enemyPortrait.classList.remove('flash-effect');
+        enemyPortrait.classList.remove('flashEffect');
     }, 500);
 }
 
 function healPlayer() {
-    const playerPortrait = document.querySelector('.player-section .character-portrait');
-    playerPortrait.classList.add('heal-effect');
+    const playerPortrait = document.querySelector('.playerSection .characterPortrait');
+    playerPortrait.classList.add('healEffect');
     setTimeout(() => {
-        playerPortrait.classList.remove('heal-effect');
+        playerPortrait.classList.remove('healEffect');
     }, 1000);
 }
 
@@ -206,7 +205,6 @@ function startGame() {
     playerPotions = 2;
     isPlayerTurn = true;
 
-    // Set enemy health based on difficulty
     switch (difficulty) {
         case 'easy':
             enemyHealth = 100;
@@ -244,11 +242,11 @@ function setDifficulty(diff) {
 }
 
 
-document.getElementById('attack-button').addEventListener('click', playerAttack);
-document.getElementById('heal-button').addEventListener('click', playerHeal);
-document.getElementById('magic-button').addEventListener('click', playerMagic);
-document.getElementById('item-button').addEventListener('click', playerUsePotion);
-document.getElementById('special-skill-button').addEventListener('click', playerSpecialSkill);
+document.getElementById('attackButton').addEventListener('click', playerAttack);
+document.getElementById('healButton').addEventListener('click', playerHeal);
+document.getElementById('magicButton').addEventListener('click', playerMagic);
+document.getElementById('itemButton').addEventListener('click', playerUsePotion);
+document.getElementById('specialSkillButton').addEventListener('click', playerSpecialSkill);
 
 startGame();
 

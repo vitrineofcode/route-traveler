@@ -36,11 +36,11 @@ The browser-based game I am making is called Route Traveler. It is a one-player 
 
 ## MVP Goals
 
-- As a player, I want to engage in battle with the enemy so that I can progress through the game.
+- As a player, I want to engage in battle with the enemy
 - As a player, I want to attack the enemy using a simple attack action so that I can defeat them in battle.
 - As a player, I want to see my character's and enemy's health bars so that I can monitor our health status during battles.
 - As a player, I want to win the game by defeating the enemy so that I can complete the game.
-- As a player, I want to lose the game if my character's health reaches zero so that there are consequences for failing in battle.
+- As a player, I want to lose the game if my character's health reaches zero.
 - As a player, I want to see a start screen with a play button so that I can begin the game when I'm ready.
 - As a player, I want to see a game over screen with a restart button so that I can try again if I lose.
 
@@ -92,46 +92,69 @@ Start planning for future additions to the game, such as new characters.
 
 # Pseudocode
 
-// Initialize game state
-Initialize game variables (player health, enemy health, game status)
+Initialize playerHealth, playerMana, enemyHealth, playerPotions, isPlayerTurn, and difficulty
 
-// Load game assets
-Load assets (images, sounds, etc.)
+Function updateStats:
+    Update the displayed player and enemy stats on the webpage
 
-// Set up event listeners
-Set up event listeners for user input (e.g., attack button, retry button)
+Function addMessage(message):
+    Add a message to the message log on the webpage
 
-// Main game loop
-While game is not over:
-// Update game state
-Update player and enemy positions and actions
+Function clearMessages:
+    Clear all messages from the message log
 
-    // Check for battle outcomes
-    If player attacks enemy:
-        Reduce enemy health
-        If enemy health <= 0:
-            Enemy is defeated
-    If enemy attacks player:
-        Reduce player health
-        If player health <= 0:
-            Player loses the game
+Function enableButtons:
+    Enable all action buttons
 
-    // Update game UI
-    Update health bars, game messages, etc.
+Function playerAttack:
+    If it's the player's turn:
+        Calculate and apply damage to the enemy
+        Update stats and check for game over
+        Set isPlayerTurn to false
+        If the enemy is still alive, initiate the enemy's turn
+        Trigger a visual effect for the enemy being attacked
 
-    // Render game frame
-    Draw game area, characters, and UI elements
+Function playerHeal:
+    If it's the player's turn and the player has enough mana:
+        Heal the player and deduct mana
+        Update stats
+        Set isPlayerTurn to false
+        Initiate the enemy's turn
+        Trigger a visual effect for the player healing
 
-// Game over
-If player wins:
-Display victory message and retry button
-If player loses:
-Display game over message and retry button
+Function playerMagic:
+    Similar to playerHeal, but for a magic attack
 
-// Event handlers
-Function for attack button:
-Player attacks enemy
+Function playerSpecialSkill:
+    Similar to playerMagic, but for a special skill attack
 
-Function for retry button:
-Reset game state
-Start game loop again
+Function playerUsePotion:
+    If it's the player's turn and the player has potions:
+        Heal the player and deduct a potion
+        Update stats
+        Set isPlayerTurn to false
+        Initiate the enemy's turn
+
+Function enemyTurn:
+    If the enemy is alive:
+        Randomly choose between attack and heal actions for the enemy
+        Apply the chosen action and update stats
+        Check for game over
+        Set isPlayerTurn to true
+
+Function checkGameOver:
+    If either the player or the enemy has 0 or less health:
+        Display the game over overlay with the appropriate message
+        Disable all action buttons
+
+Function startGame:
+    Reset player and enemy stats based on the selected difficulty
+    Clear messages, update stats, enable buttons, and add a starting message
+
+Function setDifficulty(diff):
+    Set the difficulty level and restart the game
+
+Add event listeners to the buttons for player actions and difficulty selection
+
+Call startGame to initialize the game
+

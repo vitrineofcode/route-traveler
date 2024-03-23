@@ -12,7 +12,7 @@ body {
   padding: 0;
 }
 
-.game-container {
+.gameContainer {
   display: flex;
   background-color: rgba(0, 0, 0, 0.8);
   border: 2px solid #766f03;
@@ -21,30 +21,30 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.left-container {
+.leftContainer {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-.player-section, .enemy-section {
+.playerSection, .enemySection {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.character-portrait img {
+.characterPortrait img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   margin-right: 10px;
 }
 
-.character-portrait.flash-effect img {
+.characterPortrait.flashEffect img {
   animation: flash 0.5s;
 }
 
-.character-portrait.heal-effect img {
+.characterPortrait.healEffect img {
   animation: heal 1s;
 }
 
@@ -68,7 +68,7 @@ body {
   cursor: not-allowed;
 }
 
-.message-log {
+.messageLog {
   width: 320px; 
   margin-left: 20px;
   max-height: 400px;
@@ -84,7 +84,7 @@ body {
   font-style: arial;
 }
 
-.game-over-overlay {
+.gameOverOverlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -102,13 +102,13 @@ body {
   transition: opacity 2s, background-color 2s;
 }
 
-.game-over-overlay.active {
+.gameOverOverlay.active {
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.8);
   pointer-events: all;
 }
 
-.game-over-overlay button {
+.gameOverOverlay button {
   background-color: #4caf50;
   color: white;
   border: none;
@@ -118,12 +118,12 @@ body {
   cursor: pointer;
 }
 
-#game-over-image {
+#gameOverImage {
   width: 30%;
   height: auto;
 }
 
-#restart-button {
+#restartButton {
   background-color: #f44336;
   color: #fff;
   font-size: 1em;
@@ -133,21 +133,21 @@ body {
   transition: background-color 0.3s, transform 0.2s;
 }
 
-#restart-button:hover {
+#restartButton:hover {
   background-color: #e53935;
   transform: scale(1.05);
 }
 
-#restart-button:active {
+#restartButton:active {
   transform: scale(0.95);
 }
 
-.difficulty-select {
+.difficultySelect {
   text-align: center;
   margin-bottom: 20px; 
 }
 
-.difficulty-select button {
+.difficultySelect button {
   background-color: rgb(113, 82, 41);
   color: #fff;
   border: none;
@@ -158,7 +158,7 @@ body {
   transition: background-color 0.3s;
 }
 
-.difficulty-select button:hover {
+.difficultySelect button:hover {
   background-color: #1e88e5;
 }
 
