@@ -1,4 +1,4 @@
-# Route Roamer
+# Route Traveler
 
 ## Description
 
@@ -59,7 +59,7 @@ To play "Route Roamer" visit the deployed game at [https://app.netlify.com/sites
 
 ## Next Steps
 
-Future enhancements for "Route Roamer" include:
+Future enhancements for "Route Traveler" include:
 - Multiple playable characters
 - Adding more enemies with unique abilities.
 - Implementing an inventory system for items and equipment.
