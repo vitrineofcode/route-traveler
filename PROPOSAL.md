@@ -1,6 +1,6 @@
 # Project Description
 
-The browser-based game I am making is called Route Traveler. It is a one-player game where the character goes into battle with various creatures. The goal is to defeat the creatures in battle. If you take too much damage before defeating the enemy, you lose. My future goal for the game is adding additional playable characters and levels.
+The browser-based game I am making is called Route Roamer. It is a one-player game where the character goes into battle with various creatures. The goal is to defeat the creatures in battle. If you take too much damage before defeating the enemy, you lose. My future goal for the game is adding additional playable characters and levels.
 
 # Wireframes
 
