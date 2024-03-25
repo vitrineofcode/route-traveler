@@ -102,7 +102,7 @@ Future enhancements for "Route Traveler" include:
 - Adding more enemies with unique abilities.
 - Implementing an inventory system for items and equipment.
 - Story mode
-- Walkin the grass for enemy battle encounters.
+- Walking the grass for enemy battle encounters.
 
 
 ## Author
