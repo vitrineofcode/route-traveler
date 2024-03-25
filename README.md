@@ -13,7 +13,7 @@
 
 ## Getting Started
 
-To play "Route Roamer" visit the deployed game at [https://app.netlify.com/sites/orlandoolave-routetraveler/](#). Here are some instructions to get you started:
+To play "Route Roamer" visit the deployed game at [https://orlandoolave-routetraveler.netlify.app](#). Here are some instructions to get you started:
 - Use the **Attack** button to deal damage to the enemy.
 - Use the **Heal** button to restore your health (costs mana).
 - Use the **Magic** button to cast a spell for extra damage (costs mana).
