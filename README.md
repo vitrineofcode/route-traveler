@@ -48,7 +48,7 @@ To play "Route Roamer" visit the deployed game at [https://app.netlify.com/sites
 | 2024-03-19 | Player actions | Y              |                     |
 | 2024-03-20 | Enemy behavior      | Y              |                     |
 | 2024-03-21 | Battle system     | Y              |                     |
-| 2024-03-22 | UI feedback   | Y              |                     |
+| 2024-03-22 | UI & Feedback   | N              |                     |
 | 2024-03-23 | Difficulty levels    | Y              |                     |
 | 2024-03-24 | Sounds and animations  | Y              |                     |
 

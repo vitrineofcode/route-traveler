@@ -124,7 +124,7 @@ function playerUsePotion() {
 // Enemy's turn action
 function enemyTurn() {
     if (enemyHealth > 0) {
-        const action = Math.random() > 0.5 ? 'attack'        : 'heal';
+        const action = Math.random() > 0.5 ? 'attack' : 'heal';
         let damage;
 
         switch (difficulty) {
