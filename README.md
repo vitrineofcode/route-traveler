@@ -52,6 +52,44 @@ To play "Route Roamer" visit the deployed game at [https://orlandoolave-routetra
 | 2024-03-23 | Difficulty levels    | Y              |                     |
 | 2024-03-24 | Sounds and animations  | Y              |                     |
 
+## Monday:
+
+<u>HTML</u>: Create the basic HTML structure for the game area.
+
+<u>CSS</u>: Set up a basic CSS file to style the game area and any UI elements.
+
+<u>JavaScript</u>: Initialize a JavaScript file and set up the game loop structure.
+
+## Tuesday:
+
+<u>HTML/CSS</u>: Create the character and enemy elements using HTML and CSS.
+
+<u>JavaScript</u>: Write the JavaScript functions to control the character's actions.
+
+## Wednesday:
+
+<u>JavaScript</u>: Implement the battle mechanics, including attacking, taking damage, and enemy AI.
+
+## Thursday:
+
+<u>JavaScript</u>: Develop the game's win/lose conditions.
+
+## Friday:
+
+<u>HTML/CSS</u>: Design and implement the user interface, including health bars.
+
+<u>JavaScript</u>: Add event listeners and functions to update the UI based on game events.
+
+## Saturday:
+
+Thoroughly test the game for bugs and issues. Debug and fix any problems that arise.
+
+## Sunday:
+
+Polish the game by refining the design, improving performance, and ensuring a smooth user experience.
+Start planning for future additions to the game, such as new characters.
+
+
 ## Attributions
 
 - [Google Fonts](https://fonts.google.com/) for the "Press Start 2P" font.
